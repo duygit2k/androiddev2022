@@ -12,5 +12,5 @@ Student Info
 
 * Name: Lê Duy
 * ID: BA9-075
-* Group ID: 2
+* Group ID: 11
 
