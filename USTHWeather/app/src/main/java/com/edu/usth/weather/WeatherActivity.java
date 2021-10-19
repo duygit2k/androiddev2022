@@ -9,8 +9,12 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.util.Log;
 
+import com.google.android.material.tabs.TabLayout;
+
 public class WeatherActivity extends AppCompatActivity {
+
     private ViewPager viewPager;
+    private TabLayout tabLayout;
 
     void setViewPager() {
         WeatherAndForecastFragment weatherAndForecastFragment
@@ -25,6 +29,8 @@ public class WeatherActivity extends AppCompatActivity {
         setContentView(R.layout.activity_weather);
         viewPager = findViewById(R.id.viewpager);
         setViewPager();
+        tabLayout = findViewById(R.id.tablayout);
+        tabLayout.setupWithViewPager(viewPager);
     }
 
     @Override

@@ -3,6 +3,7 @@ package com.edu.usth.weather;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -25,11 +26,8 @@ public class WeatherAndForecastFragment extends FragmentPagerAdapter {
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        switch (position){
-            case 0:
-                return new WeatherFragment();
-            case 1:
-                return new ForecastFragment();
+        if (position == 0) {
+            return new WeatherFragment();
         }
         return new ForecastFragment();
     }
@@ -38,4 +36,13 @@ public class WeatherAndForecastFragment extends FragmentPagerAdapter {
     public int getCount() {
         return 2;
     }
+
+    @Nullable
+    @Override
+    public CharSequence getPageTitle(int position) {
+        String title;
+        title = (position == 0) ? "Weather" : "Forecast";
+        return title;
+    }
+
 }
