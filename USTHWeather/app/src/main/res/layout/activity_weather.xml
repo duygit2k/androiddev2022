@@ -8,25 +8,30 @@
     android:orientation="vertical"
     tools:context=".WeatherActivity">
 
-    <fragment
-        android:id="@+id/weather"
-        class="com.edu.usth.weather.WeatherFragment"
-        android:layout_width="match_parent"
-        android:layout_height="218dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
-        tools:layout="@layout/fragment_weather" />
+    <!--    <fragment-->
+    <!--        android:id="@+id/weather"-->
+    <!--        class="com.edu.usth.weather.WeatherFragment"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="218dp"-->
+    <!--        android:layout_marginLeft="20dp"-->
+    <!--        android:layout_marginTop="20dp"-->
+    <!--        android:layout_marginRight="20dp"-->
+    <!--        tools:layout="@layout/fragment_weather" />-->
 
 
-    <fragment
-        android:id="@+id/forecast"
-        class="com.edu.usth.weather.ForecastFragment"
+    <!--    <fragment-->
+    <!--        android:id="@+id/forecast"-->
+    <!--        class="com.edu.usth.weather.ForecastFragment"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:layout_marginLeft="20dp"-->
+    <!--        android:layout_marginRight="20dp"-->
+    <!--        tools:layout="@layout/fragment_forecast" />-->
+
+    <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        tools:layout="@layout/fragment_forecast" />
+        android:id="@+id/viewpager"/>
 
 
 </LinearLayout>

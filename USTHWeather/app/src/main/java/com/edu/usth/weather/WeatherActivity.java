@@ -2,17 +2,29 @@ package com.edu.usth.weather;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.util.Log;
 
 public class WeatherActivity extends AppCompatActivity {
+    private ViewPager viewPager;
+
+    void setViewPager() {
+        WeatherAndForecastFragment weatherAndForecastFragment
+                = new WeatherAndForecastFragment(getSupportFragmentManager(),
+                FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        viewPager.setAdapter(weatherAndForecastFragment);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
+        viewPager = findViewById(R.id.viewpager);
+        setViewPager();
     }
 
     @Override
@@ -43,11 +55,5 @@ public class WeatherActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Log.i("Weather", "onResume() called");
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
-        Log.i("Weather", "onCreate() called");
     }
 }
